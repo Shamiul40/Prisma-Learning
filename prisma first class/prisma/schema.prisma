@@ -28,6 +28,6 @@ model Movie {
   releaseDate DateTime
   director String
   rating String?
-  genre String
-  reviws
+  
+  
 }
