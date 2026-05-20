@@ -31,3 +31,13 @@ model Movie {
   
   
 }
+
+model MovieList {
+  id String @id @default(uuid())
+  name String
+  releaseDate DateTime
+  director String
+  rating String?
+  
+  
+}
