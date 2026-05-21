@@ -37,7 +37,7 @@ model MovieList {
   name String
   releaseDate DateTime
   director String
-  rating String?
+  
   
   
 }
