@@ -28,16 +28,15 @@ model Movie {
   releaseDate DateTime
   director String
   rating String?
+  genre String
   
-  
+  @@map("movies")
 }
 
-model MovieList {
+model Review {
   id String @id @default(uuid())
-  name String
-  releaseDate DateTime
-
-  
-  
-  
+  rating Float
+  comment String
+  movieId String
+  @@map("reviews")
 }
