@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "ts-node-dev --respawn --transpile-only src/create.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "@types/node": "^25.8.0",
     "prisma": "^7.8.0",
     "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^6.0.3"
   },
   "dependencies": {
