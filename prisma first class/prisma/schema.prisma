@@ -10,6 +10,8 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+ 
+
 }
 
 
@@ -19,8 +21,12 @@ model User {
   name String
   email String @unique
   password String
+
+  watchList Movie[] @relation("userWatchList")
+  review Review[]
+
   createdAt DateTime @default(now())
-  updatedAt @updatedAt
+  updatedAt DateTime @updatedAt
   @@map("users")
 }
 
@@ -31,7 +37,12 @@ model Movie {
   director String
   rating String?
   genre String
-  
+
+  watchListUser User[] @relation("userWatchList")
+
+  review Review[]
+  createdAt  DateTime @default(now())
+  updatedAt DateTime @updatedAt
   @@map("movies")
 }
 
@@ -39,7 +50,15 @@ model Review {
   id String @id @default(uuid())
   comment String
   rating Float
+
+  movie Movie @relation(fields: [movieId], references: [id])
   movieId String
+
+  user User @relation(fields: [userId], references: [id])
+  userId String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@map("reviews")
   
